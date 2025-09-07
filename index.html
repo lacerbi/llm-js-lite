@@ -1,72 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>llm-js-lite — Qwen3‑1.7B (WebGPU)</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234f7cff'/%3E%3Ctext x='8' y='12' font-size='10' text-anchor='middle' fill='white' font-family='Arial'%3EL%3C/text%3E%3C/svg%3E" />
-    <meta name="description" content="Client-side chat with Qwen3‑1.7B (ONNX, WebGPU)" />
-    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qwen3 WebGPU</title>
   </head>
+
   <body>
-    <header class="app-header">
-      <div class="brand">llm-js-lite</div>
-      <div id="capability-banner" class="banner">Checking WebGPU…</div>
-    </header>
-
-    <main class="layout">
-      <aside class="sidebar">
-        <section class="panel">
-          <h2>Model</h2>
-          <div class="model-controls">
-            <button id="btn-load" disabled>Load Qwen3‑1.7B (4‑bit)</button>
-            <button id="btn-unload" disabled>Unload</button>
-            <div class="progress" id="progress"></div>
-            <div class="cache-actions">
-              <button id="btn-clear-cache">Clear model cache</button>
-            </div>
-            <div class="model-status" id="model-status">Idle</div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <h2>Settings</h2>
-          <div class="settings">
-            <label>Temperature <input type="number" step="0.05" min="0" max="2" id="temperature" /></label>
-            <label>Top‑p <input type="number" step="0.01" min="0" max="1" id="top_p" /></label>
-            <label>Top‑k <input type="number" step="1" min="0" max="200" id="top_k" /></label>
-            <label>Repetition penalty <input type="number" step="0.05" min="0.8" max="2.0" id="repetition_penalty" /></label>
-            <label>Max new tokens <input type="number" step="16" min="16" max="2048" id="max_new_tokens" /></label>
-            <label>System prompt
-              <textarea id="system-prompt" rows="6" spellcheck="false"></textarea>
-            </label>
-            <div class="settings-actions">
-              <button id="btn-save-settings">Save settings</button>
-              <button id="btn-reset-convo">Reset conversation</button>
-            </div>
-          </div>
-        </section>
-      </aside>
-
-      <section class="chat-pane">
-        <div id="chat" class="chat" role="log" aria-live="polite" aria-atomic="false"></div>
-        <form id="composer" class="composer">
-          <textarea id="input" rows="3" placeholder="Type a message and press Enter…" spellcheck="true"></textarea>
-          <div class="composer-actions">
-            <button type="submit" id="btn-send" disabled>Send</button>
-            <button type="button" id="btn-stop" disabled>Stop</button>
-          </div>
-        </form>
-      </section>
-    </main>
-
-    <footer class="statusbar" id="statusbar">
-      <span id="backend">Backend: —</span>
-      <span id="device">Device: —</span>
-      <span id="state">State: idle</span>
-      <span id="diag">TTFT: —, tok/s: —</span>
-    </footer>
-
-    <script type="module" src="./src/app.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
-  </html>
+</html>
